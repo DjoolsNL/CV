@@ -1,0 +1,36 @@
+﻿<table style="width:100% !important; align-content:flex-start; border:1px solid #ccc">
+	<tr>
+		<td style="width:10%"><span class="houseofcolorsBEE">&nbsp;&nbsp;<b>BEƎ-Ideas</b>&nbsp;&nbsp;&nbsp;</span>&nbsp;</td>
+		<td style="width:10%"><span class="houseofcolorsHoC">&nbsp;&nbsp;<b>H</b>ouse of <b>C</b>olors&nbsp;&nbsp;</span>&nbsp;</td>
+		<td style="width:10%"><span class="houseofcolorsHusk">&nbsp;&nbsp;<b>H</b>uskensweg 17b&nbsp;&nbsp;</span>&nbsp;</td>
+		<td style="width:10%"><span class="houseofcolorsHeerlen">&nbsp;&nbsp;<b>H</b>eerlen&nbsp;&nbsp;</span>&nbsp;</td>
+
+		<td style="width:10%"><span class="houseofcolorsBEE">&nbsp;&nbsp;basis: @kleurwaarde(Colours.BaseColor)&nbsp;&nbsp;</span>&nbsp;</td>
+		<td style="width:10%"><span class="houseofcolorsHoC">&nbsp;&nbsp;contrast: @kleurwaarde(Colours.ContrastColor)&nbsp;&nbsp;</span>&nbsp;</td>
+		<td style="width:10%"><span class="houseofcolorsHusk">&nbsp;&nbsp;basis+: @kleurwaarde(Colours.PlusColor)&nbsp;&nbsp;</span>&nbsp;</td>
+		<td style="width:10%"><span class="houseofcolorsHeerlen">&nbsp;&nbsp;basis-: @kleurwaarde(Colours.MinusColor)&nbsp;&nbsp;</span></td>
+	</tr>	
+</table>
+
+@code {
+
+	string kleurwaarde(int kw)
+	{
+		string r = "";
+		if (kw.ToString().Length == 1)
+		{
+			r += "00";
+		}
+		else if (kw.ToString().Length == 2)
+		{
+			r += "0";
+		}
+		return r + kw.ToString();
+	}
+
+	[CascadingParameter]
+	public Colors Colours { get; set; }
+
+    [CascadingParameter]
+    public Curriculum Curriculum { get; set; }
+}

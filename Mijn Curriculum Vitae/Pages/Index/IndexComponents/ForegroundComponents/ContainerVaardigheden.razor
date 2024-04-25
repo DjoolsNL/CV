@@ -1,0 +1,54 @@
+﻿<div class="datadrager-card">
+@foreach (Vaardigheden item in Curriculum.LijstVaardigheden)
+    {        
+    <div>
+        <fieldset>
+            <legend><span class="legend-span">&nbsp;Kennis en Vaardigheden&nbsp;</span></legend>
+            <table>
+                <tr>
+					<td>&nbsp;&nbsp;Omschrijving</td>
+					<td><input @bind="item.Omschrijving" /></td>
+					<td>
+						<button @onclick="() => Delete(item)">
+							<img src="minus-circle.png" alt="sss" />
+						</button>
+					</td>
+                </tr>
+                <tr>
+					<td>&nbsp;&nbsp;Toelichting</td>
+                    <td><input @bind="item.Toelichting" /></td>
+					<td></td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+    }
+	 <div>
+		<span style="float:right">
+			<button @onclick="Add"><img src="plus-circle.png" alt="sss" /></button>
+		</span>
+	</div>
+</div>
+
+
+@code {
+	[CascadingParameter]
+	public Curriculum Curriculum { get; set; }
+
+	[CascadingParameter]
+	public XMLData XmlData { get; set; }
+
+	void Add()
+	{
+	Vaardigheden vh = new Vaardigheden();
+	vh.Id = Curriculum.LijstVaardigheden.Count() + 1;
+	Curriculum.LijstVaardigheden.Add(vh);
+	XmlData.Save(Curriculum);
+	}
+
+	void Delete(Vaardigheden weg)
+	{
+	Curriculum.LijstVaardigheden.Remove(weg);
+	XmlData.Save(Curriculum);
+	}
+}

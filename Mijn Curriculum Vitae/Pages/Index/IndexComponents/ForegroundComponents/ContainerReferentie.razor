@@ -1,0 +1,59 @@
+﻿<div class="datadrager-card">
+	@foreach (Referentie item in Curriculum.LijstReferentie)
+	{
+		<fieldset>
+			<legend><span class="legend-span">&nbsp;Referentie &nbsp;</span></legend>
+			<table>
+				<tr>
+					<td>&nbsp;&nbsp;Naam</td>
+					<td><input @bind="item.Naam" /></td>
+					<td>
+						<button @onclick="() => Delete(item)">
+							<img src="minus-circle.png" alt="sss" />
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;Functie</td>
+					<td><input @bind="item.Functie" /></td>
+					<td></td>
+				</tr>
+			</table>
+		</fieldset>
+	}
+
+	<div>
+		<span style="float:right">
+			<button @onclick="Add"><img src="plus-circle.png" alt="sss" /></button>
+		</span>
+	</div>
+</div>
+
+
+@code 
+{
+	/// parameter: geeft object Curriculum dat in parent werd aangemaakt door aan child EditOpleiding  
+	[CascadingParameter]
+	public Curriculum Curriculum { get; set; }
+
+	/// idem voor XMLData
+	[CascadingParameter]
+	public XMLData XmlData { get; set; }
+
+	// wordt aangeroepen als user op png met de + klikt (toevoegen)
+	// toevoeging wordt in xml file weggeschreven
+	void Add()
+	{
+	Referentie reff = new Referentie();
+	reff.Id = Curriculum.LijstReferentie.Count() + 1;
+	Curriculum.LijstReferentie.Add(reff);
+	XmlData.Save(Curriculum);
+	}
+
+	// idem voor het verwijdering 
+	void Delete(Referentie weg)
+	{
+	Curriculum.LijstReferentie.Remove(weg);
+	XmlData.Save(Curriculum);
+	}
+}

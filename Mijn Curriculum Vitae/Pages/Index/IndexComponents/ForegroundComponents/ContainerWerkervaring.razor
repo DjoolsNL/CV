@@ -1,0 +1,72 @@
+﻿<div class="datadrager-card">
+	@foreach (Werkervaring item in Curriculum.LijstWerkervaring)
+	{
+		if (teller % 2 == 0)
+		{
+			fs = "fieldset-oneven";
+		}
+		else
+		{
+			fs = $"fieldset-even"; 
+		}
+		<fieldset class="@fs">
+        <legend><span class="legend-span">&nbsp;Werkervaring&nbsp;</span></legend>
+        <table>
+            <tr>
+				<td>&nbsp;&nbsp;Werkgever</td>
+                <td><input @bind="item.Werkgever" /></td>
+				<td>
+					<button @onclick="() => Delete(item)">
+						<img src="minus-circle.png" alt="sss" />
+					</button>
+				</td>
+            </tr>
+            <tr>
+				<td>&nbsp;&nbsp;Functie</td>
+                <td><input @bind="item.Functie" /></td>
+				<td></td>
+            </tr>
+            <tr>
+				<td>&nbsp;&nbsp;Periode</td>
+                <td><input @bind="item.Periode" /></td>
+				<td></td>
+            </tr>
+            <tr>
+				<td>&nbsp;&nbsp;Referenties</td>
+                <td><input @bind="item.Referenties" /></td>
+				<td></td>
+            </tr>
+        </table>
+    </fieldset>
+	teller++;
+    }
+	<div>
+		<span style="float:right">
+			<button @onclick="Add"><img src="plus-circle.png" alt="sss" /></button>
+		</span>
+	</div>
+</div>
+
+@code {
+	[CascadingParameter]
+	public Curriculum Curriculum { get; set; }
+
+	[CascadingParameter]
+	public XMLData XmlData { get; set; }
+
+	int teller = 1;
+	string fs = "";
+	void Add()
+	{
+		Werkervaring we = new Werkervaring();
+		we.Id = Curriculum.LijstWerkervaring.Count() + 1;
+		Curriculum.LijstWerkervaring.Add(we);
+		XmlData.Save(Curriculum);
+	}
+
+	void Delete(Werkervaring weg)
+	{
+		Curriculum.LijstWerkervaring.Remove(weg);
+		XmlData.Save(Curriculum);
+	}
+}

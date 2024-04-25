@@ -1,0 +1,107 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <!-- <Nullable>enable</Nullable> -->
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Mijn_Curriculum_Vitae</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="obj\**" />
+    <Compile Remove="wwwroot\css\excluded open-iconic\**" />
+    <Compile Remove="wwwroot\css\open-iconic\**" />
+    <Content Remove="bin\**" />
+    <Content Remove="obj\**" />
+    <Content Remove="wwwroot\css\excluded open-iconic\**" />
+    <Content Remove="wwwroot\css\open-iconic\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <EmbeddedResource Remove="wwwroot\css\excluded open-iconic\**" />
+    <EmbeddedResource Remove="wwwroot\css\open-iconic\**" />
+    <None Remove="bin\**" />
+    <None Remove="obj\**" />
+    <None Remove="wwwroot\css\excluded open-iconic\**" />
+    <None Remove="wwwroot\css\open-iconic\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Index\IndexComponents\EditBackground.razor" />
+    <Content Remove="Pages\Index\IndexComponents\EditFront.razor" />
+    <Content Remove="Pages\Index\IndexComponents\EditLosseGegevens.razor" />
+    <Content Remove="Pages\Index\IndexComponents\EditMenu.razor" />
+    <Content Remove="Pages\Index\IndexComponents\Locatie.razor" />
+    <Content Remove="Pages\Index\IndexComponents\Naam.razor" />
+    <Content Remove="Pages\Index\IndexComponents\Randodm.razor" />
+    <Content Remove="Pages\Index\IndexComponents\SterkZwak.razor" />
+    <Content Remove="Pages\Counter.razor" />
+    <Content Remove="Pages\CV.razor" />
+    <Content Remove="Pages\Dating.razor" />
+    <Content Remove="Pages\EditLocatie.razor" />
+    <Content Remove="Pages\EditOpleiding.razor" />
+    <Content Remove="Pages\EditVaardigheden.razor" />
+    <Content Remove="Pages\EditWerkervaring.razor" />
+    <Content Remove="Pages\FetchData.razor" />
+    <Content Remove="Pages\Functions.razor" />
+    <Content Remove="Shared\MainLayoutttt.razor" />
+    <Content Remove="Shared\NavMenu.razor" />
+    <Content Remove="Shared\SurveyPrompt.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\CV.razor.css" />
+    <None Remove="Pages\Index.razor.css" />
+    <None Remove="Shared\MainLayoutttt.razor.css" />
+    <None Remove="Shared\NavMenu.razor.css" />
+    <None Remove="XMLFile.xml" />
+    <None Remove="Xml\Ulli.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Voortgang.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Ulli.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\XMLFile.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\asdas.jpg" />
+    <None Include="wwwroot\austin.jpg" />
+    <None Include="wwwroot\bontmuts.jpg" />
+    <None Include="wwwroot\css\bootstrap\bootstrap.min.css" />
+    <None Include="wwwroot\css\bootstrap\bootstrap.min.css.map" />
+    <None Include="wwwroot\css\site.css" />
+    <None Include="wwwroot\drevil.jpg" />
+    <None Include="wwwroot\fat.jpg" />
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\fem.jpg" />
+    <None Include="wwwroot\hurley.jpg" />
+    <None Include="wwwroot\melferrel.jpg" />
+    <None Include="wwwroot\mini.jpg" />
+    <None Include="wwwroot\minus-circle.png" />
+    <None Include="wwwroot\minus-white.png" />
+    <None Include="wwwroot\movie.mp4" />
+    <None Include="wwwroot\old.jpg" />
+    <None Include="wwwroot\plus-button.png" />
+    <None Include="wwwroot\plus-circle.png" />
+    <None Include="wwwroot\plus.png" />
+    <None Include="wwwroot\son.jpg" />
+    <None Include="wwwroot\wagner.jpg" />
+    <None Include="wwwroot\york.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Pages\Index\IndexComponents\ForegroundComponents\ContainerTool.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4css_4bootstrap_4bootstrap_1min_1css_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

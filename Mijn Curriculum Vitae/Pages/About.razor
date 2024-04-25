@@ -1,0 +1,139 @@
+﻿@page "/about"
+@using System.Xml.Linq
+@using System.Text
+@using System.IO
+<style>
+	.flex{
+		display: flex;
+		padding-bottom: 15px;
+		flex-wrap: wrap;
+		justify-content: center;
+		background-color: white;
+		border-radius: 24px;
+	}
+
+	.flex > div {
+		background-color: red;
+		margin: 10px;
+		padding: 15px;
+		font-size: 13px;
+		border-radius: 24px;
+	}
+
+	p{
+		font-size: 14px;
+		padding: 40px;
+	}
+
+	span {
+		border: 1px solid black;
+		background-color: lightpink;
+		margin-left:1px;
+
+	}
+
+	div{
+		width:300px;
+		height: 550px;
+		background-color: purple; /* For browsers that do not support gradients */
+		/*background-image: linear-gradient(purple,red, yellow);*/
+		background-image: linear-gradient(yellow,green,blue,purple, red, yellow);
+	}
+</style>
+
+
+<h1>House of Colors Heerlen</h1>
+
+<p>
+	Stel je ontwikkelt dit verder als portal site voor organisaties/ondernemers die een meerwaarde erin zien om samen op een site
+	te staan. Je zou de huidige site dus kunnen uitbouwen zodat elke huurder een eigen pagina heeft. Dan moet de data set een soort CV van de
+	kunstenaar/onderneming zijn. BedrijfsCV BCV
+
+	Dus BEE als eerste erin stoppen?
+
+	xxx
+	Waarom lukt het nooit om creatief denken in organisaties te ontketenen?
+
+	Ten eerste denken de meeste mensen bij het woord creatief aan kunst en kunstzinnigheid. "Ik creatief? Nee, ik kan niks van tekenen of zo".
+
+	Dus zodra je het begrip creativiteit gebruikt begrijpen mensen niet goed waar je het over gaat. Uitleggen dat iedereen creatief is helpt niet 
+	echt want voor veel mensen blijft het iets dat voorbehouden is aan kunstenaars.
+
+	Het begrip vindingrijkheid is veel geschikter om te communiceren. Dat begrijpt iedereen op dezelfde manier. Het is 
+	makkelijker om mensen te laten inzien dat ze dagelijks vindingrijk bezig zijn. Vindingrijk: iets op een slimme, handige manier doen die je 
+	zelf bedacht hebt. Kenmerkend is dat de slimme manier niet de standaard of verwachte manier is. Ook typisch is het flexibel 
+	omgaan met de regels die in dat speciale geval gelden. 
+	
+	En nog iets belangrijks: de context. De slimme oplossing maakt altijd gebruik van wat in de context beschikbaar is. 
+
+
+	nog net op tijd enz maak 
+
+	Omdat iedereen binnen de context van een organisatie meteen op de "nu moet ik "
+
+
+	@for (int i = 0; i < 40; i++)
+{
+	<span>&nbsp;&nbsp;</span>
+		}
+	
+
+	</p>
+
+	<p></p>
+<p>
+
+<ul>
+	<li></li>
+</ul>
+
+</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div>
+
+</div>
+
+@{
+	Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
+	path = Directory.GetCurrentDirectory() + "\\Xml" + "\\Ulli.xml";
+
+	AllXMLContent = XElement.Load(path);
+	var Context = AllXMLContent.Elements().ToList();
+}
+
+	<ul>
+
+@{
+		foreach (var item in Context)
+		{
+
+			<li></li>
+		}
+}
+	</ul>
+
+
+
+@code {
+	public XElement AllXMLContent { get; set; }
+	string path;
+	// 	// deze pagina moet nog ergens op de frontpagina een link krijgen en is nog niet klaar
+
+	string a = "dit was 1";
+	private int currentCount = 0;
+
+	[Parameter]
+	public int IncrementAmount { get; set; } = 1;
+
+	private void IncrementCount()
+	{
+	currentCount += IncrementAmount;
+	}
+
+	string g = "<ViewMenu />";
+
+	
+}

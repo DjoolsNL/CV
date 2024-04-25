@@ -1,0 +1,28 @@
+﻿<div class="datadrager-card" style="background-color:transparent">
+    <fieldset>
+        <legend><span class="legend-span">&nbsp;Locatie&nbsp;</span></legend>
+        <table>
+            <tr>
+				<td><input  @bind="Curriculum.Adres" /></td>
+				<td>Adres</td>
+            </tr>
+            <tr>
+				<td><input  @bind="Curriculum.Postcode" /></td>
+				<td>Postcode</td>
+            </tr>
+            <tr>
+				<td><input @bind="Curriculum.Woonplaats" /></td>
+				<td>Woonplaats</td>
+            </tr>
+            </table>
+    </fieldset>
+</div>
+
+
+@code {
+    [CascadingParameter]
+    public Curriculum Curriculum { get; set; }
+
+    [CascadingParameter]
+    public XMLData XmlData { get; set; }
+}

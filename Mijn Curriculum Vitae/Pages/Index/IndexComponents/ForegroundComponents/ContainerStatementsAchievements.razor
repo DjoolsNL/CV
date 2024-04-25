@@ -1,0 +1,16 @@
+﻿<div class="datadrager-card">
+    <fieldset>
+    <legend><span class="legend-span">&nbsp;Statements & Achievements&nbsp;</span></legend>
+        <table>
+            <tr>
+                <td><textarea @bind="Curriculum.Meta" /></td>
+            </tr>
+        </table>
+    </fieldset>
+</div>
+
+
+@code {
+    [CascadingParameter]
+    public Curriculum Curriculum { get; set; }
+}

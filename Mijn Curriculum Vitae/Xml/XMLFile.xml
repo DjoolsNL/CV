@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<cv>
+	  <access>rr</access>
+	  <voornaam>Jules</voornaam>
+	  <tussenvoegsel>van</tussenvoegsel>
+	  <achternaam>Nuijs</achternaam>
+	  <leeftijd>62</leeftijd>
+	  <adres>B. van Grunsvenplein 13</adres>
+	  <postcode>6411AN</postcode>
+	  <woonplaats>Heerlen</woonplaats>
+	  <email>djools121@gmail.com</email>
+	  <telefoon>0457851688</telefoon>
+	  <foto>foto zegt meer dan 1000 woorden.</foto>
+	  <meta>Voor mijn vorige werkgever bedacht ik de slogan "Met onze mini-graafmachines kunt u een heel grote kuil voor een ander graven".</meta>
+	  <container_werkervaring>
+		<werkervaring>
+		  <id>0</id>
+		  <werkgever></werkgever>
+		  <functie></functie>
+		  <periode></periode>
+		  <referenties></referenties>
+		</werkervaring>
+	  </container_werkervaring>
+	  <container_opleiding>
+		<opleiding>
+		  <id>0</id>
+		  <naamopleiding>HBDO</naamopleiding>
+		  <niveau>HBO</niveau>
+		  <diploma>Ja</diploma>
+		  <toelichting>Bestuursacademie Zuid</toelichting>
+		</opleiding>
+		<opleiding>
+		  <id>0</id>
+		  <naamopleiding></naamopleiding>
+		  <niveau></niveau>
+		  <diploma></diploma>
+		  <toelichting></toelichting>
+		</opleiding>
+	  </container_opleiding>
+		<container_training>
+			<training>
+				<id>0</id>
+				<naam>aaa</naam>
+				<toelichting>aaaa</toelichting>
+			</training>
+		</container_training>
+		<container_cursus>
+			<cursus>
+				<id>0</id>
+				<naam>aa</naam>
+				<toelichting>aaaa</toelichting>
+			</cursus>	
+		</container_cursus>
+	
+		<container_certificaat>
+			<certificaat>
+				<id>0</id>
+				<naam>aaa</naam>
+				<toelichting>aaa</toelichting>
+			</certificaat>
+		</container_certificaat>
+
+	  <container_vaardigheden>
+		<vaardigheden>
+		  <id>0</id>
+		  <omschrijving>Microsoft Office</omschrijving>
+		  <toelichting></toelichting>
+		</vaardigheden>
+		<vaardigheden>
+		  <id>0</id>
+		  <omschrijving>MySql</omschrijving>
+		  <toelichting></toelichting>
+		</vaardigheden>
+	  </container_vaardigheden>
+	  <container_vrijetijdsbesteding>
+		<vrijetijdsbesteding>
+		  <id>0</id>
+		  <activiteit>Bouwen</activiteit>
+		</vrijetijdsbesteding>
+		<vrijetijdsbesteding>
+		  <id>0</id>
+		  <activiteit>met code objecten maken</activiteit>
+		</vrijetijdsbesteding>
+		<vrijetijdsbesteding>
+		  <id>0</id>
+		  <activiteit>met objecten functionaliteiten maken</activiteit>
+		</vrijetijdsbesteding>
+	  </container_vrijetijdsbesteding>
+	  <container_referentie>
+		<referentie>
+		  <id>0</id>
+		  <naam>Janssen</naam>
+		  <functie>Bedrijfsleider</functie>
+		</referentie>
+	  </container_referentie>
+	  <container_tool>
+		<tool>
+		  <id>0</id>
+		  <experiencelevel>42</experiencelevel>
+		</tool>
+	  </container_tool>
+	</cv>
+	<cv>
+		<access>rr</access>
+		<voornaam>Jules</voornaam>
+		<tussenvoegsel>van</tussenvoegsel>
+		<achternaam>Nuijs</achternaam>
+		<leeftijd>62</leeftijd>
+		<adres>B. van Grunsvenplein 13</adres>
+		<postcode>6411AN</postcode>
+		<woonplaats>Heerlen</woonplaats>
+		<email>djools121@gmail.com</email>
+		<telefoon>0457851688</telefoon>
+		<foto>foto zegt meer dan 1000 woorden.</foto>
+		<meta>
+			Voor mijn vorige werkgever bedacht ik de slogan "Met onze mini-graafmachines kunt u een heel grote kuil voor een ander graven".
+
+			Ideeen
+			* we analyseren de kleurvoorkeuren van degene die personeel zoekt en de cv's wil bekijken. dat doen we meteen vanaf de rootpagina - indexpagina. Bezoeker krijgt twee identieke menu's in verschillende kleurstellingen voorgeschoteld. Dan komt hij in het zoek menu en ook daar weer analyseren we zijn kleur keuzes. De cv's die hij uiteindelijk te zien krijgt worden ingekleurd met de kleuren waar hij op vertrouwd.
+			* Dit is waarschijnlijk ook hoe grotere bedrijven te werk gaan. Alle info die de klant geeft gebruiken waar het kan.
+			* Kleurenpsychologie. Als de kleuren je wel/niet aanstaan. we worden onrustig van bepaalde kleurcombinaties en weer rustig van andere. We associeren ze ook met ideeen die ons wel of niet aanstaan. Sommige vinden we interessant of saai.
+			Als we de bezoeker een kleurcombinatie tonen waar hij zich prettig bij voelt zal hij langer op de site verblijven, zal zijn ervaring positiever zijn.
+
+		</meta>
+		<container_werkervaring>
+			<werkervaring>
+				<id>0</id>
+				<werkgever></werkgever>
+				<functie></functie>
+				<periode></periode>
+				<referenties></referenties>
+			</werkervaring>
+		</container_werkervaring>
+		<container_opleiding>
+			<opleiding>
+				<id>0</id>
+				<naamopleiding>HBDO</naamopleiding>
+				<niveau>HBO</niveau>
+				<diploma>Ja</diploma>
+				<toelichting>Bestuursacademie Zuid</toelichting>
+			</opleiding>
+			<opleiding>
+				<id>0</id>
+				<naamopleiding></naamopleiding>
+				<niveau></niveau>
+				<diploma></diploma>
+				<toelichting></toelichting>
+			</opleiding>
+		</container_opleiding>
+
+		<container_training>
+			<training>
+				<id>0</id>
+				<naam>dd</naam>
+				<toelichting>dddddd</toelichting>
+			</training>
+		</container_training>
+		<container_cursus>
+			<cursus>
+				<id>0</id>
+				<naam>dd</naam>
+				<toelichting>dddddddd</toelichting>
+			</cursus>		
+		</container_cursus>
+		<container_certificaat>
+			<certificaat>
+				<id>0</id>
+				<naam>dddddddddddd</naam>
+				<toelichting>ddddddddddddd</toelichting>
+			</certificaat>
+		</container_certificaat>
+
+		<container_vaardigheden>
+			<vaardigheden>
+				<id>0</id>
+				<omschrijving>Microsoft Office</omschrijving>
+				<toelichting></toelichting>
+			</vaardigheden>
+			<vaardigheden>
+				<id>0</id>
+				<omschrijving>MySql</omschrijving>
+				<toelichting></toelichting>
+			</vaardigheden>
+		</container_vaardigheden>
+		<container_vrijetijdsbesteding>
+			<vrijetijdsbesteding>
+				<id>0</id>
+				<activiteit>Bouwen</activiteit>
+			</vrijetijdsbesteding>
+			<vrijetijdsbesteding>
+				<id>0</id>
+				<activiteit>met code objecten maken</activiteit>
+			</vrijetijdsbesteding>
+			<vrijetijdsbesteding>
+				<id>0</id>
+				<activiteit>met objecten functionaliteiten maken</activiteit>
+			</vrijetijdsbesteding>
+		</container_vrijetijdsbesteding>
+		<container_referentie>
+			<referentie>
+				<id>0</id>
+				<naam>Janssen</naam>
+				<functie>Bedrijfsleider</functie>
+			</referentie>
+		</container_referentie>
+		<container_tool>
+			<tool>
+				<id>0</id>
+				<experiencelevel>42</experiencelevel>
+			</tool>
+		</container_tool>
+	</cv>
+	<cv>
+		<access>rr</access>
+		<voornaam>Jules</voornaam>
+		<tussenvoegsel>van</tussenvoegsel>
+		<achternaam>Nuijs</achternaam>
+		<leeftijd>62</leeftijd>
+		<adres>B. van Grunsvenplein 13</adres>
+		<postcode>6411AN</postcode>
+		<woonplaats>Heerlen</woonplaats>
+		<email>djools121@gmail.com</email>
+		<telefoon>0457851688</telefoon>
+		<foto>foto zegt meer dan 1000 woorden.</foto>
+		<meta>
+			Voor mijn vorige werkgever bedacht ik de slogan "Met onze mini-graafmachines kunt u een heel grote kuil voor een ander graven".
+
+			Ideeen
+			* we analyseren de kleurvoorkeuren van degene die personeel zoekt en de cv's wil bekijken. dat doen we meteen vanaf de rootpagina - indexpagina. Bezoeker krijgt twee identieke menu's in verschillende kleurstellingen voorgeschoteld. Dan komt hij in het zoek menu en ook daar weer analyseren we zijn kleur keuzes. De cv's die hij uiteindelijk te zien krijgt worden ingekleurd met de kleuren waar hij op vertrouwd.
+			* Dit is waarschijnlijk ook hoe grotere bedrijven te werk gaan. Alle info die de klant geeft gebruiken waar het kan.
+			* Kleurenpsychologie. Als de kleuren je wel/niet aanstaan. we worden onrustig van bepaalde kleurcombinaties en weer rustig van andere. We associeren ze ook met ideeen die ons wel of niet aanstaan. Sommige vinden we interessant of saai.
+			Als we de bezoeker een kleurcombinatie tonen waar hij zich prettig bij voelt zal hij langer op de site verblijven, zal zijn ervaring positiever zijn.
+
+		</meta>
+		<container_werkervaring>
+			<werkervaring>
+				<id>0</id>
+				<werkgever></werkgever>
+				<functie></functie>
+				<periode></periode>
+				<referenties></referenties>
+			</werkervaring>
+		</container_werkervaring>
+		<container_opleiding>
+			<opleiding>
+				<id>0</id>
+				<naamopleiding>HBDO</naamopleiding>
+				<niveau>HBO</niveau>
+				<diploma>Ja</diploma>
+				<toelichting>Bestuursacademie Zuid</toelichting>
+			</opleiding>
+			<opleiding>
+				<id>0</id>
+				<naamopleiding></naamopleiding>
+				<niveau></niveau>
+				<diploma></diploma>
+				<toelichting></toelichting>
+			</opleiding>
+		</container_opleiding>
+		<container_training>
+			<training>
+				<id>0</id>
+				<naam>dddd</naam>
+				<toelichting>dddddd</toelichting>
+			</training>
+		</container_training>
+		<container_cursus>
+		<cursus>
+			<id>0</id>
+			<naam>dddddd</naam>
+			<toelichting>ddddddd</toelichting>
+		</cursus>		
+		</container_cursus>
+
+		<container_certificaat>
+			<certificaat>
+				<id>0</id>
+				<naam>ddddd</naam>
+				<toelichting>ddddddd</toelichting>
+			</certificaat>
+		</container_certificaat>
+
+		<container_vaardigheden>
+			<vaardigheden>
+				<id>0</id>
+				<omschrijving>Microsoft Office</omschrijving>
+				<toelichting></toelichting>
+			</vaardigheden>
+			<vaardigheden>
+				<id>0</id>
+				<omschrijving>MySql</omschrijving>
+				<toelichting></toelichting>
+			</vaardigheden>
+		</container_vaardigheden>
+		<container_vrijetijdsbesteding>
+			<vrijetijdsbesteding>
+				<id>0</id>
+				<activiteit>Bouwen</activiteit>
+			</vrijetijdsbesteding>
+			<vrijetijdsbesteding>
+				<id>0</id>
+				<activiteit>met code objecten maken</activiteit>
+			</vrijetijdsbesteding>
+			<vrijetijdsbesteding>
+				<id>0</id>
+				<activiteit>met objecten functionaliteiten maken</activiteit>
+			</vrijetijdsbesteding>
+		</container_vrijetijdsbesteding>
+		<container_referentie>
+			<referentie>
+				<id>0</id>
+				<naam>Janssen</naam>
+				<functie>Bedrijfsleider</functie>
+			</referentie>
+		</container_referentie>
+		<container_tool>
+			<tool>
+				<id>0</id>
+				<experiencelevel>42</experiencelevel>
+			</tool>
+		</container_tool>
+	</cv>
+</root>

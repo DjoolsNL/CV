@@ -1,0 +1,460 @@
+﻿@using System.Text
+<style>
+	body {
+    display: block;
+    margin: 0px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+}
+
+table {
+	padding: 4px;
+    border-radius: 4px;
+    border: none;
+    width: 180px;
+}
+td {
+	border:none;
+	padding: 3px;
+}
+
+a {
+    font-size: 14px;
+    text-decoration:none !important;
+}
+    a:link {color: black;}
+    a:visited {color: black;}
+
+input {
+    padding-left: 13px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+	height: 12px;
+    width: 170px;
+	font-size:12px;
+}
+
+    input[type=text]:focus {border: 1px solid #000;}
+
+textarea{
+    padding: 20px;
+    width:350px;
+    height: 300px;
+    border-radius: 24px;
+}
+
+fieldset {
+    border-radius: 24px;
+    border-width: 2px;
+	margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+}
+
+img {
+    border-radius: 24%;
+    -webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+    position:relative;
+	  animation: turnhead 16s infinite;
+  animation-iteration-count: 5;
+}
+ img:hover {
+    transform: scale(1.1);
+ }
+@@keyframes turnhead {
+  0%   {transform: scaleX(-1);}
+  49.9% {transform: scaleX(-1);}
+  50% {transform: scaleX(1);}
+
+  100% {transform: scaleX(1);}
+}
+
+
+#header {
+	margin-top:4px;
+	margin-bottom:4px;
+    padding: 10px;
+    padding-left: 2rem !important;
+    padding-right: 1.5rem !important;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border: 1px solid #d6d5d5;
+	border-style:solid;
+    height: 3.5rem;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+	background-color: rgb(240,240,240);
+}
+.container {
+    position: absolute;
+	width: 95.5vmax;
+		align-content: center;
+	justify-content:center;
+}
+
+.bg_grid-container {
+    position: absolute;
+	align-content: center;
+	justify-content:center;
+    top: 0px;
+    z-index: 0;
+    display: grid;
+    gap: 30px;    
+    padding: 30px;
+    border-radius: 24px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	@grid_template_areas()
+}
+    .bg_grid-container > div {
+        display: flex;
+		align-items: center;
+        flex-wrap: wrap;
+        padding: 20px;
+        font-size: 11px;
+        border-radius: 30px;
+        text-align: left;
+        flex-direction: column;
+    }
+.bg-item1, .bg-item2, .bg-item3, .bg-item4, .bg-item5, .bg-item6, .bg-item7, .bg-item8, .bg-item9, .bg-item10, .bg-item11, .bg-item12, .bg-item13, .bg-item14, .bg-item15 {
+	display:flex;
+	align-content:center;
+}
+.bg-item1 {grid-area: item1;}
+.bg-item2 {grid-area: item2;}
+.bg-item3 {grid-area: item3;}
+.bg-item4 {grid-area: item4;}
+.bg-item5 {grid-area: item5;}
+.bg-item6 {grid-area: item6;}
+.bg-item7 {grid-area: item7;}
+.bg-item8 {grid-area: item8;}
+.bg-item9 {grid-area: item9;}
+.bg-item10 {grid-area: item10;}
+.bg-item11 {grid-area: item11;}
+.bg-item12 {grid-area: item12;}
+.bg-item13 {grid-area: item13;}
+.bg-item14 {grid-area: item14;}
+.bg-item15 {grid-area: item15;}
+
+.bg_grid-containerMidden{
+    position: absolute;
+	align-content: center;
+	justify-content:center;
+    top: 0px;
+    z-index: 0;
+    display: grid;
+    gap: 30px;    
+    padding: 30px;
+	background-color:transparent !important;
+	z-index:1 !important}
+
+
+button {
+    background-color: transparent;
+    border: none;
+    align-items: center;
+	cursor: pointer;
+    padding: 7px;
+	border-radius: 24px;
+}
+button:hover {transform: scale(0.7);}
+
+.btn-primary {
+    color: #000;
+    padding: 17px;
+    border: 1px solid;
+    border-color: gray;
+    border-radius: 24px;
+	cursor: pointer;
+}
+
+.btn-primary {
+    color: #fff;
+    border-color: #1861ac;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.14);
+}
+
+.flex-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 3;
+    display: flex;
+	flex-wrap: wrap;
+    padding-bottom: 35px;
+	align-items: center;
+/*	align-content:center;*/
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 24px;
+}
+
+.DataDrager-Dating {
+    margin: 10px;
+	margin-bottom: 55px;
+    padding: 16px;
+    font-size: 12px;
+    border-radius: 24px;
+    border: 1px solid rgb(100,100,100);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.DataDrager-B {
+    display: flex;
+    padding:6px;
+	align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 10px;
+	margin-right: 20px;
+	flex-direction: column;
+	border-radius: 24px;
+	border: 1px solid rgb(100,100,100);
+	box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.DataDrager-Nuances {
+	border:none;
+	padding: 12px;
+	background:transparent;
+	align-content:flex-end; 
+	margin-right:18px;
+	margin-left:18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+	box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 24px;
+	transform: scale(0.9);
+}
+
+.legend-span {
+	padding:2px;
+	border-radius:10px;}
+
+.datadrager-card{
+	margin: 9px;
+    font-size: 12px;
+    border-radius: 24px;
+	color: white;
+}
+
+
+
+.whitefont{
+	color: white;
+	border: 1px black;
+}
+
+.basic {
+    display: flex;
+    padding: 13px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+
+.minus {
+	background-image: url(minus-white.png);
+	padding: 0px;
+}
+.plus {background-image: url(plus-circle.png);
+	padding: 0px;
+}
+
+.divcolorbuttons {
+    margin: 5px;
+    padding: 12px;
+    font-size: 13px;
+    border-radius: 24px;
+    border: 1px solid rgb(100,100,100);
+	border-radius: 24px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.14);
+}
+
+.divcolorbuttons:hover {
+  position: relative;
+  animation: mymove 0.1s infinite;
+  animation-iteration-count: 5;
+}
+@@keyframes mymove {
+  0%   {top: 0px; left:0px}
+  25% {top: 0px; left:1px}
+  50% {top: 1px; left: 1px}
+  75% {top: 1px; left: 0px}
+  100% {top: 0px; left: 0px}
+}
+
+
+
+.nuance1, .nuance2, .nuance3, .nuance4, .nuance5, .nuance6 {
+    border: 1px solid rgb(100,100,100);
+    padding:0px;
+    border-radius: 55%;
+	margin-left: auto;
+    margin-right: auto;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.houseofcolorsBEE, .houseofcolorsHoC, .houseofcolorsHusk, .houseofcolorsHeerlen{
+	padding:5px;
+	border-radius: 18px 0px;
+	border-top: dashed 4px rgb(240,240,240);
+	@{
+		if (Rand.getRandom.Next(1,3) % 2 == 0)
+		{
+															<text>color:white;</text>	
+		}
+		else
+		{
+															<text>color:black;</text>	
+		}
+	}
+}
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  KLEUREN    KLEUREN  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  KLEUREN  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  KLEUREN    KLEUREN  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  KLEUREN  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+.bg_grid-container {background-color: @Colours.KleurenBoek[Colours.Bg_Grid_Container_Background];}
+.bg_grid-container > div {color: @Colours.KleurenBoek[Colours.Bg_Grid_Container_Div];}
+
+.bg-item1  {background-color:@Colours.KleurenBoek[Colours.Bg_Item1_Background];}
+.bg-item2  {background-color:@Colours.KleurenBoek[Colours.Bg_Item2_Background];}
+.bg-item3  {background-color:@Colours.KleurenBoek[Colours.Bg_Item3_Background];}
+.bg-item4  {background-color:@Colours.KleurenBoek[Colours.Bg_Item4_Background];}
+.bg-item5  {background-color:@Colours.KleurenBoek[Colours.Bg_Item5_Background];}
+.bg-item6  {background-color:@Colours.KleurenBoek[Colours.Bg_Item6_Background];}
+.bg-item7  {
+	background-color:@Colours.KleurenBoek[Colours.Bg_Item7_Background];
+	border:@Colours.KleurenBoek[Colours.Bg_Item7_Border];
+	border-style:dashed solid;
+}
+.bg-item8  {background-color:@Colours.KleurenBoek[Colours.Bg_Item8_Background];}
+.bg-item9  {background-color:@Colours.KleurenBoek[Colours.Bg_Item9_Background];}
+.bg-item10 {background-image:@Colours.KleurenBoek[Colours.Bg_Item10_Background_Image];}
+.bg-item11 {background-color:@Colours.KleurenBoek[Colours.Bg_Item11_Background];}
+.bg-item12 {
+	background-color:@Colours.KleurenBoek[Colours.Bg_Item12_Background];
+	border:@Colours.KleurenBoek[Colours.Bg_Item12_Border];
+}
+.bg-item13 {background-color:@Colours.KleurenBoek[Colours.Bg_Item13_Background];}
+.bg-item14 {background-color:@Colours.KleurenBoek[Colours.Bg_Item14_Background];}
+.bg-item15 {background-color:@Colours.KleurenBoek[Colours.Bg_Item15_Background];} 
+
+.DataDrager-Dating {background-color: @Colours.KleurenBoek[Colours.DataDrager_Dating_Background];} 
+.DataDrager-B {background-color: @Colours.KleurenBoek[Colours.DataDrager_B_Background];} 
+
+.datadrager-card{
+	/*background-color: hsl(@Colours.basisKleurSL(45, 60, 40, 42));*/
+}
+.divcolorbuttons {background-color: @Colours.KleurenBoek[Colours.Divcolorbuttons_Background];} 
+fieldset{background-color: @Colours.KleurenBoek[Colours.Fieldset_Background];}
+
+.fieldset-even{background-color: @Colours.KleurenBoek[Colours.Fieldset_Even_Background];}
+.fieldset-oneven{}
+
+.houseofcolorsBEE{background-color: @Colours.KleurenBoek[Colours.HouseofcolorsBEE_Background];}
+.houseofcolorsHoC{background-color:@Colours.KleurenBoek[Colours.HouseofcolorsHoC_Background];}
+.houseofcolorsHusk{background-color:@Colours.KleurenBoek[Colours.HouseofcolorsHusk_Background];}
+.houseofcolorsHeerlen{background-color:@Colours.KleurenBoek[Colours.HouseofcolorsHeerlen_Background];}
+input {	background-color: @Colours.KleurenBoek[Colours.InputBackground];}
+.legend-span {
+	background-color:@Colours.KleurenBoek[Colours.Legend_Span_Background];
+	border-top:solid 2px;
+	padding:2px;
+}
+
+.nuance1 {background-color: @Colours.KleurenBoek[Colours.Nuance1_Background];
+    width:10px;
+	height:10px;
+	box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.42), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.nuance2 {background-color: @Colours.KleurenBoek[Colours.Nuance2_Background];
+    width:18px;
+	height:18px;
+	box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.42), 0 3px 10px 0 rgba(0, 0, 0, 0.17);
+}
+.nuance3 {background-color: @Colours.KleurenBoek[Colours.Nuance3_Background];
+    width:26px;
+	height:26px;
+	box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.42), 0 3px 10px 0 rgba(0, 0, 0, 0.14);
+}
+.nuance4 {background-color: @Colours.KleurenBoek[Colours.Nuance4_Background];
+    width:32px;
+	height:32px;	
+	box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.42), 0 3px 10px 0 rgba(0, 0, 0, 0.10);
+}
+.nuance5 {background-color:@Colours.KleurenBoek[Colours.Nuance5_Background];
+    width:40px;
+	height:40px;
+	box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.42), 0 3px 10px 0 rgba(0, 0, 0, 0.10);
+}
+.nuance6 {background-color: @Colours.KleurenBoek[Colours.Nuance6_Background];
+	width:48px;
+	height:48px;
+}
+
+#pictureframe {background-image: @Colours.KleurenBoek[Colours.Pictureframe_Background_Image];}
+
+p > span {
+	@{	// text in header 
+		if (Rand.getRandom.Next(1,3) % 2 == 0)
+			{<text>color:white;</text>}
+		else
+			{<text>color:black;</text>}
+	}	
+	font-size:0.9vmax;
+}
+</style>
+
+
+
+@code {
+	[CascadingParameter]
+	public Colors Colours { get; set; }
+
+	    // zorgt voor een random in de css achtergrond grid
+    string grid_template_areas()
+    { 
+		StringBuilder sb = new();
+		List<string> gridItems = new List<string> {
+		"item2",
+		"item3",
+		"item4",
+		"item5",
+		"item6",
+		"item7",
+		"item8",
+		"item9",
+		"item10",
+		"item11",
+		"item12",
+		"item13",
+		"item14"
+		};
+		int count = gridItems.Count();
+		sb.Append("grid-template-areas: " + $"\"" + "item1" + $"\"");// item1 is vast en item 15 idem
+		for (int i = 0; i < count; i++)
+		{
+			string weg = gridItems[Rand.getRandom.Next(0, count - i)];
+			sb.Append($"\"" + weg + $"\"");
+			gridItems.Remove(weg);
+		}
+		sb.Append($"\"" + "item15" + $"\"" + ";"); // item1 is vast en item 15 idem
+		return sb.ToString();
+		}
+}

@@ -1,0 +1,162 @@
+﻿@using Mijn_Curriculum_Vitae.Pages.Index.IndexComponents.ForegroundComponents
+
+<div class="DataDrager-Dating">
+		<CascadingValue Value="@XmlData">
+			<CascadingValue Value="@Curriculum">			
+				<ContainerDating />
+			</CascadingValue>
+		</CascadingValue>
+</div>
+
+<div class="DataDrager-B">
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerLocatie />
+		</CascadingValue>
+	</CascadingValue>
+
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerVrijetijdsbesteding />
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+<div class="DataDrager-Nuances">
+	<br>
+	<div>
+		<div class="nuance6">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance5">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance4">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance3">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance2">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance1">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance2">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance3">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance4">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance5">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance6">&nbsp;&nbsp;&nbsp;</div>
+	</div>
+</div>
+
+<div class="DataDrager-B">
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerWerkervaring />
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+<div class="DataDrager-B">
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerDropDownLijsten />
+			
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+<div class="DataDrager-Nuances">
+	<br>
+	<div>
+		<div class="nuance6">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance5">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance4">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance3">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance2">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance1">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance2">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance3">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance4">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance5">&nbsp;&nbsp;&nbsp;</div>
+		<div class="nuance6">&nbsp;&nbsp;&nbsp;</div>
+	</div>
+</div>
+
+<div class="DataDrager-B">
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerOpleiding />
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+<div class="DataDrager-B">
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerVaardigheden />
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+<div class="DataDrager-B" style="background-color: hsl(@Colours.ContrastColor,@Rand.getRandom.Next(50, 80)%,@Rand.getRandom.Next(50, 80)%);">
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerStatementsAchievements />
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+<div class="DataDrager-B" style="background-color: hsl(@Colours.ContrastColor,@Rand.getRandom.Next(50, 80)%,@Rand.getRandom.Next(50, 80)%);">
+		
+	<CascadingValue Value="@Curriculum">		
+		<CascadingValue Value="@XmlData">
+			<ContainerReferentie />
+		</CascadingValue>
+	</CascadingValue>
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerTool />
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+<div class="DataDrager-B" style="background-color: hsl(@Colours.ContrastColor,@Rand.getRandom.Next(50, 80)%,@Rand.getRandom.Next(50, 80)%);">
+
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerCertificaat />
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+<div class="DataDrager-B" style="background-color: hsl(@Colours.ContrastColor,@Rand.getRandom.Next(50, 80)%,@Rand.getRandom.Next(50, 80)%);">
+
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerCursus />
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+<div class="DataDrager-B" style="background-color: hsl(@Colours.ContrastColor,@Rand.getRandom.Next(50, 80)%,@Rand.getRandom.Next(50, 80)%);">
+
+	<CascadingValue Value="@Curriculum">
+		<CascadingValue Value="@XmlData">
+			<ContainerTraining />
+		</CascadingValue>
+	</CascadingValue>
+</div>
+
+
+
+@code {
+	[CascadingParameter]
+	public Colors Colours { get; set; }
+
+	[CascadingParameter]
+	public Curriculum Curriculum { get; set; }
+
+	[CascadingParameter]
+	public XMLData XmlData { get; set; }
+
+	// deze void methods zorgen ervoor dat de method Colours.SetValues(Colors.button, 10) ook weten
+	// in welk kleurgebied de random basiskleur moet worden getrokken
+	//void Rood() => Colors.button = "Rood";
+	//void Oranje() => Colors.button = "oranje";
+	//void Geel() => Colors.button = "Geel";
+	//void Groen() => Colors.button = "Groen";
+	//void Cyaan() => Colors.button = "Cyaan";
+	//void Blauw() => Colors.button = "Blauw";
+	//void Magenta() => Colors.button = "Magenta";
+}

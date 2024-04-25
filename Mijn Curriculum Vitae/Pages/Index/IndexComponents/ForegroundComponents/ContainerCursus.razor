@@ -1,0 +1,60 @@
+﻿<div class="datadrager-card">
+	@foreach (Cursus item in Curriculum.LijstCursus)
+	{
+		<fieldset>
+			<legend><span class="legend-span">&nbsp;Cursus&nbsp;</span></legend>
+			<table>
+				<tr>
+					<td>&nbsp;&nbsp;Cursus</td>
+					<td><input @bind="item.Name" /></td>
+					<td>
+						<button @onclick="() => Delete(item)">
+							<img src="minus-circle.png" alt="sss" />
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;Toelichting</td>
+					<td><input @bind="item.Toelichting" /></td>
+					<td>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	}
+
+	<div>
+		<span style="float:right">
+			<button @onclick="Add"><img src="plus-circle.png" alt="sss" /></button>
+		</span>
+	</div>
+</div>
+
+
+@code 
+{
+	/// parameter: geeft object Curriculum dat in parent werd aangemaakt door aan child EditOpleiding  
+	[CascadingParameter]
+	public Curriculum Curriculum { get; set; }
+
+	/// idem voor XMLData
+	[CascadingParameter]
+	public XMLData XmlData { get; set; }
+
+	// wordt aangeroepen als user op png met de + klikt (toevoegen)
+	// toevoeging wordt in xml file weggeschreven
+	void Add()
+	{
+	Cursus cursus = new Cursus();
+		cursus.Id = Curriculum.LijstReferentie.Count() + 1;
+		Curriculum.LijstCursus.Add(cursus);
+	XmlData.Save(Curriculum);
+	}
+
+	// idem voor het verwijdering 
+	void Delete(Cursus weg)
+	{
+	Curriculum.LijstCursus.Remove(weg);
+	XmlData.Save(Curriculum);
+	}
+}

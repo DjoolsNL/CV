@@ -1,0 +1,128 @@
+﻿@page "/"
+@using System.Xml.Linq
+@using System.Text
+@using Mijn_Curriculum_Vitae.Pages.Index.IndexComponents
+@using Mijn_Curriculum_Vitae.Pages.Index.IndexComponents.ForegroundComponents
+
+<!--DOCUMENTATIE
+	Wat is er makkelijker voor een programmeur om software te begrijpen via de voordeur.
+	Die voordeur is deze file: "Index.Razor".
+	blablabla
+-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    CSS  CSS  CSS  CSS    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<CascadingValue Value="@Colours">
+	<CSS />
+</CascadingValue>
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    HTML  HTML HTML HTML  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX          HEADER          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<div id="header" style="border-radius:24px;">
+	<CascadingValue Value="@Colours">
+		<Header />
+	</CascadingValue>
+	<button style="border-radius: 24px; background-color:white" @onclick="Save">Save</button>
+</div>
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    CONTAINER WAAR ALLES INZIT   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<div class="container">
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    ACHTERGROND DIV die met css grid werkt  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<div class="bg_grid-container">
+	<CascadingValue Value="@Colours">
+		<Background />
+	</CascadingValue>
+</div>
+<div class="bg_grid-containerMidden">
+	<br /><br /><br /><br />
+	<div class="raster">
+		<CascadingValue Value="@Colours">
+			<BackgroundOverlay1 />
+			</CascadingValue>
+	</div>
+		
+	<br /><br /><br />&nbsp;
+</div>
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  VOORGROND DIV die met css flexbox werkt  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<div class="flex-container" style="padding-top:30px;"> 
+	<div class="DataDrager-B">
+		<div class="divcolorbuttons">
+			<input type="hidden" @bind="Colours.BaseColor" />
+			<button style="background-color:@Colors.Rood" @onclick="Rood">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+			<button style="background-color:@Colors.Geel" @onclick="Geel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+		</div>
+
+		<div class="divcolorbuttons" style="border-radius:10px;padding: 6px;padding-left:22px;padding-right:22px;">&nbsp;&nbsp;&nbsp;</div>
+
+		<div class="divcolorbuttons">
+			<button style="background-color:@Colors.Groen" @onclick="Groen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+			<button style="background-color:@Colors.Cyaan" @onclick="Cyaan">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+		</div>
+
+		<div class="divcolorbuttons">
+			<button style="background-color:@Colors.Blauw" @onclick="Blauw">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+			<button style="background-color:@Colors.Magenta" @onclick="Magenta">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+		</div>
+
+	</div>
+
+		<CascadingValue Value="@Colours">
+			<CascadingValue Value="@Curriculum">
+			<CascadingValue Value="@XmlData">
+				<Foreground />
+			</CascadingValue>
+		</CascadingValue>
+	</CascadingValue>
+</div>
+	<br />
+</div>
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX C# CODE CODE CODE CODE CODE CODE XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+@{
+	Colours.SetValues(Colors.button, 45);
+	if (teller > 0)
+	{
+		Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
+		String path = Directory.GetCurrentDirectory() + "\\Xml" + "\\XMLFile.xml";
+		XmlData = new XMLData(path);
+		Curriculum = @XmlData.GetCurriculum();
+		teller++;
+	}
+}
+	@code
+{
+	int teller = 1;
+
+	XMLData XmlData;
+	public Curriculum Curriculum;
+
+	// Het object dat bij elke klik opnieuw wordt aangemaakt en het kleurenpalet bevat
+	public Colors Colours = new Colors();
+	////////////////////////////////////////////////////////////////////////////
+	// Object Curriculum wordt omgezet naar XML - XML wordt naar file geschreven
+	////////////////////////////////////////////////////////////////////////////
+	private void Save() => XmlData.Save(Curriculum);
+
+	void Rood()    => Colors.button = "Rood";
+	void Geel() { Colors.button = "Geel"; var a = 1; }
+	void Groen()   => Colors.button = "Groen";
+	void Cyaan()   => Colors.button = "Cyaan";
+	void Blauw()   => Colors.button = "Blauw";
+	void Magenta() => Colors.button = "Magenta";
+	}
+
+
+
+
+
+
+
